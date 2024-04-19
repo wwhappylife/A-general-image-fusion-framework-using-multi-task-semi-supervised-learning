@@ -16,33 +16,28 @@ discussion experiments corroborate the effectiveness of the proposed method.*
 <hr />
 
 
-## Training
+## First Stage Training
 
-After preparing the training data in ```data/``` directory, use 
+After preparing the training data for MFIF and MEIF tasks, use 
 ```
-python train.py
+python train_stage1.py
 ```
-to start the training of the model. Use the ```de_type``` argument to choose the combination of degradation types to train on. By default it is set to all the 3 degradation types (noise, rain, and haze).
+to start the training of the model.
 
-Example Usage: If we only want to train on deraining and dehazing:
+## Second Stage Training
+
+After preparing the training data for MFIF, MEIF, and IVF tasks, use 
 ```
-python train.py --de_type derain dehaze
+python train_stage2.py
 ```
+to start the training of the model
 
 ## Testing
 
-After preparing the testing data in ```test/``` directory, place the mode checkpoint file in the ```ckpt``` directory. The pretrained model can be downloaded [here](https://drive.google.com/file/d/1wkw5QCQyM2msQOpV-PL2uag3QLs8jYFc/view?usp=sharing). To perform the evalaution use
+After preparing the testing data, use
 ```
-python test.py --mode {n}
+python test.py
 ```
-```n``` is a number that can be used to set the tasks to be evaluated on, 0 for denoising, 1 for deraining, 2 for dehaazing and 3 for all-in-one setting.
-
-Example Usage: To test on all the degradation types at once, run:
-
-```
-python test.py --mode 3
-```
-
 ## Citation
 If you use our work, please consider citing:
 
