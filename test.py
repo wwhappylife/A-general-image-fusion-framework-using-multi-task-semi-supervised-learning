@@ -108,7 +108,8 @@ def fusion():
             
             with torch.no_grad():
                 model.eval()
-                out,mask = model.test(iry, viy,False)
+                # to test on mfif and meif task, set second_stage=False; to test on IVF and MMIF task, set second_stage=True
+                out,mask = model.test(iry, viy,second_stage=False)
                 out = torch.clamp(out,0,1)
             
             out = torch.cat((out,fcr, fcb),dim=1)
