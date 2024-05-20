@@ -41,12 +41,11 @@ python test.py
 ## Citation
 If you use our work, please consider citing:
 
-    @article{wang2024general,
-  title={A general image fusion framework using multi-task semi-supervised learning},
-  author={Wang, Wu and Deng, Liang-Jian and Vivone, Gemine},
-  journal={Information Fusion},
-  pages={102414},
-  year={2024},
-  publisher={Elsevier}
-}
+  @article{wang2024general,
+    title={A general image fusion framework using multi-task semi-supervised learning},
+    author={Wang, Wu and Deng, Liang-Jian and Vivone, Gemine},
+    journal={Information Fusion},
+    pages={102414},
+    year={2024},
+    publisher={Elsevier}}
 
