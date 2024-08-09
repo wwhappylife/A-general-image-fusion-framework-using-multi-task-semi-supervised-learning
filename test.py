@@ -48,7 +48,7 @@ class GetDataset(Dataset):
     def __len__(self):
         return len(self.ir_name_list)
 
-training_dir_ir = "/home/wangwu/mfif_dataset/MFI-WHU30/B/" # Lytro20
+training_dir_ir = "/home/wangwu/mfif_dataset/MFI-WHU30/B/" # Lytro20;
 ir_name_list = os.listdir(training_dir_ir) 
 print(ir_name_list)
 training_dir_vi = "/home/wangwu/mfif_dataset/MFI-WHU30/A/" # Lytro20
@@ -68,7 +68,7 @@ print_network(model)
 model_path = "./models/pyramid_model/two_fuse_rule.pth" 
 model.load_state_dict(torch.load(model_path))
 
-def fusion():
+def fusion(is_second_stage):
     
     fl = 0.0
     pa = 0.0
@@ -111,8 +111,10 @@ def fusion():
                 # to test on mfif and meif task, set second_stage=False; to test on IVF and MMIF task, set second_stage=True
                 out,mask = model.test(iry, viy,second_stage=False)
                 out = torch.clamp(out,0,1)
-            
-            out = torch.cat((out,fcr, fcb),dim=1)
+            if is_second_stage:
+                out = torch.cat((out,ircr,ircb),dim=1)
+            else:
+                out = torch.cat((out,vicr, vicb),dim=1)
             result = np.squeeze(out.detach().permute(0,2,3,1).cpu().numpy())
             result = cv2.cvtColor(result, cv2.COLOR_YCrCb2BGR)
             result = result * 255
@@ -131,5 +133,5 @@ def fusion():
 
 
 if __name__ == '__main__':
-
-    fusion()
+    is_second_stage = False
+    fusion(is_second_stage)
