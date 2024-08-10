@@ -34,10 +34,17 @@ to start the training of the model
 
 ## Testing
 
-After preparing the testing data, use
+After preparing the testing data, run 
 ```
 python test.py
 ```
+for the testing on MFF or MEF test,
+```
+set "is_second_stage=True"
+```
+python test.py
+```
+for the testing on MMF and IVF task.
 ## Citation
 If you use our work, please consider citing:
 
