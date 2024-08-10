@@ -38,9 +38,7 @@ After preparing the testing data, run
 ```
 python test.py
 ```
-for the testing on MFF or MEF test,
-```
-set "is_second_stage=True"
+for the testing on MFF or MEF test, set "is_second_stage=True", and run
 ```
 python test.py
 ```
