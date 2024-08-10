@@ -52,6 +52,10 @@ class GetDataset(Dataset):
 # training_dir_ir = "your mri directory"
 # training_dir_vi = "your pet directory" 
 
+# for mri-ct task, set is_second_stage="True"
+# training_dir_ir = "your ct directory"
+# training_dir_vi = "your mri directory" 
+
 # for mri-spect task, set is_second_stage="True"
 # training_dir_ir = "your mri directory"
 # training_dir_vi = "your pet directory" 
