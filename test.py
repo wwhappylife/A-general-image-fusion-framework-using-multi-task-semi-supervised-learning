@@ -48,23 +48,23 @@ class GetDataset(Dataset):
     def __len__(self):
         return len(self.ir_name_list)
         
-# for mri-pet task, set second_stage="True"
+# for mri-pet task, set is_second_stage="True"
 # training_dir_ir = "your mri directory"
 # training_dir_vi = "your pet directory" 
 
-# for mri-spect task, set second_stage="True"
+# for mri-spect task, set is_second_stage="True"
 # training_dir_ir = "your mri directory"
 # training_dir_vi = "your pet directory" 
 
-# for ivf task, set second_stage="True"
+# for ivf task, set is_second_stage="True"
 # training_dir_ir = "your ir directory"
 # training_dir_vi = "your vi directory" 
 
-# for mef task, set second_stage="false"
+# for mef task, set is_second_stage="false"
 # training_dir_ir = "your underexposure image directory"
 # training_dir_vi = "your overexposure image directory" 
 
-# for mff task, set second_stage="false"
+# for mff task, set is_second_stage="false"
 # training_dir_ir = "your far-focus image directory"
 # training_dir_vi = "your near-focus image directory"
 
